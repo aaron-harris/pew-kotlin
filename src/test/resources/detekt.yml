@@ -400,7 +400,7 @@ naming:
   InvalidPackageDeclaration:
     active: true
     rootPackage: ''
-    excludes: ['**/build.gradle.kts']
+    excludes: ['**/build.gradle.kts', '**/buildSrc/**']
   MatchingDeclarationName:
     active: true
     mustBeFirst: true

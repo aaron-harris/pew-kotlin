@@ -1,13 +1,14 @@
+import aph.pew.Versions
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
-    kotlin("jvm") version "1.4.21"
-    id("io.gitlab.arturbosch.detekt") version "1.15.0"
+    kotlin("jvm") version Versions.kotlin
+    id("io.gitlab.arturbosch.detekt") version Versions.detekt
 }
 
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
-    detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", Versions.detekt)
 }
 
 repositories {
@@ -25,6 +26,7 @@ detekt {
     input = files(
         "src/main/kotlin",
         "src/test/kotlin",
+        "buildSrc/src/main/kotlin",
         "build.gradle.kts"
     )
     config = files("src/test/resources/detekt.yml")
