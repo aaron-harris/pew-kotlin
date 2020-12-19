@@ -6,20 +6,24 @@ plugins {
     id("io.gitlab.arturbosch.detekt") version Versions.detekt
 }
 
-dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", Versions.detekt)
-}
-
 repositories {
     mavenCentral()
     jcenter()
+}
+
+dependencies {
+    implementation(kotlin("stdlib-jdk8"))
+    staticAnalysis()
 }
 
 tasks.withType<KotlinCompile> {
     kotlinOptions {
         jvmTarget = "15"
     }
+}
+
+fun DependencyHandlerScope.staticAnalysis() {
+    detektPlugins("io.gitlab.arturbosch.detekt", "detekt-formatting", Versions.detekt)
 }
 
 detekt {
