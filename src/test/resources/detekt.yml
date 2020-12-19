@@ -268,8 +268,8 @@ formatting:
     indentSize: 4
     continuationIndentSize: 4
   MaximumLineLength:
-    active: true
-    maxLineLength: 120
+    active: false # Redundant with MaxLineLength in formatting
+    maxLineLength: 100
   ModifierOrdering:
     active: true
     autoCorrect: true
