@@ -1,5 +1,7 @@
 package aph.hello
 
 fun main() {
-    println("Hello, world!")
+    println(greeting())
 }
+
+fun greeting(name: String = "world") = "Hello, $name!"

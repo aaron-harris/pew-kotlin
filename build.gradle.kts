@@ -14,6 +14,7 @@ repositories {
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     staticAnalysis()
+    unitTesting()
 }
 
 tasks.withType<KotlinCompile> {
@@ -34,4 +35,18 @@ detekt {
         "build.gradle.kts"
     )
     config = files("src/test/resources/detekt.yml")
+}
+
+fun DependencyHandlerScope.unitTesting() {
+    listOf(
+        "kotest-runner-junit5",
+        "kotest-assertions-core",
+        "kotest-property"
+    ).forEach { artifact ->
+        testImplementation("io.kotest", artifact, Versions.kotest)
+    }
+}
+
+tasks.withType<Test> {
+    useJUnitPlatform()
 }
