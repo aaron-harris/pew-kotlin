@@ -1,0 +1,14 @@
+[versions]
+kotest = "5.9.1"
+
+[libraries]
+kotest-assertions-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
+kotest-property-core = { group = "io.kotest", name = "kotest-property", version.ref = "kotest" }
+kotest-runner = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
+
+[bundles]
+unittest = [
+    "kotest-assertions-core",
+    "kotest-property-core",
+    "kotest-runner",
+]
