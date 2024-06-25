@@ -1,3 +1,5 @@
+import org.gradle.api.tasks.testing.logging.TestLogEvent
+
 plugins {
     kotlin("jvm") version "2.0.0"
     application
@@ -15,4 +17,22 @@ application {
 
 repositories {
     mavenCentral()
+}
+
+dependencies {
+    testImplementation(libs.bundles.unittest)
+}
+
+tasks.test {
+    useJUnitPlatform()
+
+    testLogging {
+        events(
+            TestLogEvent.PASSED,
+            TestLogEvent.SKIPPED,
+            TestLogEvent.FAILED,
+            TestLogEvent.STANDARD_OUT,
+            TestLogEvent.STANDARD_ERROR,
+        )
+    }
 }
