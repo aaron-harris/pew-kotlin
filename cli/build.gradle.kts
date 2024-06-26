@@ -1,8 +1,11 @@
+import com.diffplug.gradle.spotless.BaseKotlinExtension
 import org.gradle.api.tasks.testing.logging.TestLogEvent
 
 plugins {
     kotlin("jvm") version "2.0.0"
     application
+
+    alias(libs.plugins.spotless)
 }
 
 kotlin {
@@ -34,5 +37,19 @@ tasks.test {
             TestLogEvent.STANDARD_OUT,
             TestLogEvent.STANDARD_ERROR,
         )
+    }
+}
+
+spotless {
+    val sharedKtlint: BaseKotlinExtension.() -> Unit = {
+        ktlint(libs.versions.ktlint.get())
+            .setEditorConfigPath("$rootDir/.editorconfig")
+    }
+
+    kotlin {
+        sharedKtlint()
+    }
+    kotlinGradle {
+        sharedKtlint()
     }
 }
