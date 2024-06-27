@@ -6,6 +6,7 @@ plugins {
     application
 
     alias(libs.plugins.spotless)
+    alias(libs.plugins.detekt)
 }
 
 kotlin {
@@ -52,4 +53,12 @@ spotless {
     kotlinGradle {
         sharedKtlint()
     }
+}
+
+detekt {
+    source.setFrom(
+        "src/main/kotlin",
+        "src/test/kotlin",
+        "build.gradle.kts",
+    )
 }
