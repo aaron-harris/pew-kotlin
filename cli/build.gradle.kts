@@ -7,6 +7,7 @@ plugins {
 
     alias(libs.plugins.spotless)
     alias(libs.plugins.detekt)
+    alias(libs.plugins.kover)
 }
 
 kotlin {
@@ -61,4 +62,19 @@ detekt {
         "src/test/kotlin",
         "build.gradle.kts",
     )
+}
+
+kover {
+    reports {
+        filters.excludes.classes(application.mainClass)
+
+        verify.rule {
+            minBound(80)
+        }
+
+        total {
+            log.onCheck = true
+            html.onCheck = true
+        }
+    }
 }
