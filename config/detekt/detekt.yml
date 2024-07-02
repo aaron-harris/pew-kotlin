@@ -623,6 +623,7 @@ style:
     active: true
     excludes:
       - '**/test/**'
+      - '**/*.gradle.kts'
     ignoreNumbers:
       - '-1'
       - '0'
