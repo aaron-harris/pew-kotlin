@@ -1,4 +1,4 @@
-package aph.pew.kotlin.cli
+package io.github.aaron_harris.pew.kotlin.cli
 
 import io.kotest.core.spec.style.FunSpec
 import io.kotest.matchers.shouldBe

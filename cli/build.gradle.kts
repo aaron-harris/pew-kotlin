@@ -17,7 +17,7 @@ kotlin {
 }
 
 application {
-    mainClass = "aph.pew.kotlin.cli.MainKt"
+    mainClass = "io.github.aaron_harris.pew.kotlin.cli.MainKt"
 }
 
 repositories {
