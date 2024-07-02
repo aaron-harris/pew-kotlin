@@ -1,4 +1,4 @@
-package aph.pew.kotlin.cli
+package io.github.aaron_harris.pew.kotlin.cli
 
 /**
  * Main entry point for the CLI.
