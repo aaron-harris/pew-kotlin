@@ -1,9 +1,6 @@
 [versions]
-detekt = "1.23.6"
+aph-gradleConventions = "1.0.0"
 kotest = "5.9.1"
-kover = "0.8.1"
-ktlint = "1.3.0"
-spotless = "6.25.0"
 
 [libraries]
 kotest-assertions-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
@@ -18,6 +15,4 @@ unittest = [
 ]
 
 [plugins]
-detekt = { id = "io.gitlab.arturbosch.detekt", version.ref = "detekt" }
-kover = { id = "org.jetbrains.kotlinx.kover", version.ref = "kover" }
-spotless = { id = "com.diffplug.spotless", version.ref = "spotless" }
+aph-kotlin = { id = "io.github.aaron-harris.gradle-conventions.aph-kotlin", version.ref = "aph-gradleConventions" }

@@ -33,4 +33,11 @@ jobs:
         uses: gradle/actions/setup-gradle@v3
 
       - name: 'Build with Gradle'
-        run: ./gradlew check
+        env:
+          GITHUB_USER: ${{ github.actor }}
+          GITHUB_TOKEN: ${{ github.token }}
+        run: >-
+          ./gradlew
+          -PgitHubPackagesUsername="$GITHUB_USER"
+          -PgitHubPackagesPassword="$GITHUB_TOKEN"
+          check
