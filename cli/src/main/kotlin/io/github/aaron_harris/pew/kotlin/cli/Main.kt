@@ -6,5 +6,5 @@ package io.github.aaron_harris.pew.kotlin.cli
  * Contains no meaningful functionality at present.
  */
 fun main() {
-    hello("World")
+    HelloCommand().main(emptyArray())
 }

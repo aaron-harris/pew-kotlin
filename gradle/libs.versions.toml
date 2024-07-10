@@ -1,8 +1,10 @@
 [versions]
 aph-gradleConventions = "1.0.0"
+clikt = "4.4.0"
 kotest = "5.9.1"
 
 [libraries]
+clikt = { group = "com.github.ajalt.clikt", name = "clikt", version.ref = "clikt" }
 kotest-assertions-core = { group = "io.kotest", name = "kotest-assertions-core", version.ref = "kotest" }
 kotest-property-core = { group = "io.kotest", name = "kotest-property", version.ref = "kotest" }
 kotest-runner = { group = "io.kotest", name = "kotest-runner-junit5", version.ref = "kotest" }
