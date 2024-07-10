@@ -6,13 +6,17 @@ import io.kotest.property.Arb
 import io.kotest.property.arbitrary.string
 import io.kotest.property.checkAll
 
-class HelloTests : FunSpec({
+class HelloExerciseTests : FunSpec({
 
-    test("Test hello") {
+    test("Solution for default input") {
+        HelloExercise.solve() shouldBe "Hello, World!"
+    }
+
+    test("Solution with parametrization") {
         checkAll(
             Arb.string(),
         ) { name ->
-            hello(name) shouldBe "Hello, $name!"
+            HelloExercise.solve(input = name) shouldBe "Hello, $name!"
         }
     }
 })
