@@ -19,4 +19,6 @@ aphKotlin {
 
 dependencies {
     testImplementation(libs.bundles.unittest)
+
+    implementation(libs.clikt)
 }
