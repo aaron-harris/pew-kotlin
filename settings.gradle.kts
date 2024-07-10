@@ -1,5 +1,6 @@
 rootProject.name = "pew-kotlin"
 
+include("core")
 include("cli")
 
 pluginManagement {

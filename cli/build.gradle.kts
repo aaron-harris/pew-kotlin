@@ -18,6 +18,8 @@ aphKotlin {
 }
 
 dependencies {
+    implementation(project(":core"))
+
     testImplementation(libs.bundles.unittest)
 
     implementation(libs.clikt)
