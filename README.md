@@ -3,7 +3,7 @@ Programming Exercise Workbook for Kotlin
 
 ## Overview
 
-This project is currently in the early stages of constructed, but it will contain my solutions to various programming
+This project is currently in the early stages of construction, but it will contain my solutions to various programming
 exercises, such as [Advent of Code](https://adventofcode.com/) or [Project Euler](https://projecteuler.net/).  All
 solutions here will use the Kotlin programming language (my preferred language as a professional developer); if I decide
 to branch out to other languages, I'll create other "PEW" projects for those languages.
